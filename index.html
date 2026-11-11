@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jelajahi makanan khas, kuliner viral, dan cerita rasa Yogyakarta.">
+    <title>Rasa Jogja — Food Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Rasa Jogja">
+        <span class="brand-mark">RJ</span>
+        <span>rasa<span class="brand-dot">.</span>jogja</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+      <nav aria-label="Navigasi utama">
+        <a href="#explore">Explore</a>
+        <a href="#trending">Trending</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#regions">Regions</a>
+        <a href="#stories">Stories</a>
+      </nav>
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik latar" aria-pressed="false">
+        <span class="music-icon" aria-hidden="true">♫</span>
+        <span id="musicLabel">Musik mati</span>
+      </button>
+      <button class="saved-btn" id="favoriteNav" type="button">♡ <span>Favorites</span></button>
+    </header>
+
+    <audio id="bgMusic" autoplay loop preload="metadata">
+      <source src="assets/music/Gending Musik Jawa (Gamelan Jawa) - Javanese Gamelan.mp3" type="audio/mpeg">
+    </audio>
+
+    <main id="app">
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Jelajah rasa · Yogyakarta</p>
+          <h1>Temukan rasa<br><em>paling Jogja.</em></h1>
+          <p class="hero-text">Dari gudeg yang legendaris hingga kuliner viral yang sedang ramai. Pilih daerahnya, temukan ceritanya.</p>
+          <a class="btn btn-primary primary-btn" href="#explore">Explore Now <span>↓</span></a>
+        </div>
+        <div class="hero-art" id="foodSlideshow" aria-label="Slideshow kuliner pilihan">
+          <div class="hero-slides" aria-live="polite">
+            <figure class="hero-slide is-active" aria-hidden="false">
+              <img class="hero-photo" src="assets/images/mangut-lele.jpg" alt="Mangut lele dengan kuah santan khas Jogja">
+              <figcaption><strong>Mangut Lele</strong><span>Smoky, gurih, pedas.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/gudeg.jpg" alt="Gudeg Jogja disajikan dengan nasi dan lauk">
+              <figcaption><strong>Gudeg Jogja</strong><span>Manis gurih yang legendaris.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/sate-klatak.jpg" alt="Sate klatak khas Bantul yang dibakar">
+              <figcaption><strong>Sate Klatak</strong><span>Favorit malam dari Bantul.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/oseng-mercon.jpg" alt="Oseng mercon dengan sambal cabai merah">
+              <figcaption><strong>Oseng Mercon</strong><span>Pedasnya bikin nagih.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/mie-sapi-bantul.jpg" alt="Mie sapi khas Bantul">
+              <figcaption><strong>Mie Sapi Bantul</strong><span>Hangat, gurih, dan mengenyangkan.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/bakpia.jpg" alt="Bakpia Jogja yang baru dipanggang">
+              <figcaption><strong>Bakpia Pathok</strong><span>Manis legit, oleh-oleh favorit.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/brongkos.jpg" alt="Brongkos khas Yogyakarta dengan kuah kluwek">
+              <figcaption><strong>Brongkos Jogja</strong><span>Kuah kluwek pekat, kaya rempah.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/bakmi-jawa.jpg" alt="Bakmi Jawa goreng dengan ayam dan sayuran">
+              <figcaption><strong>Bakmi Jawa</strong><span>Dimasak satu per satu, hangat dan gurih.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/jadah-tempe.jpg" alt="Jadah ketan disajikan dengan tempe bacem">
+              <figcaption><strong>Jadah Tempe</strong><span>Pasangan manis gurih dari Kaliurang.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/kipo.jpg" alt="Kipo Kotagede yang dipanggang di atas daun pisang">
+              <figcaption><strong>Kipo Kotagede</strong><span>Kecil, legit, harum panggangan.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/wedang-uwuh.jpg" alt="Wedang uwuh merah dengan rempah-rempah">
+              <figcaption><strong>Wedang Uwuh</strong><span>Hangat berempah dari Imogiri.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/wedang-ronde.jpg" alt="Wedang ronde berisi bola ketan dalam kuah jahe">
+              <figcaption><strong>Wedang Ronde</strong><span>Kuah jahe hangat untuk malam Jogja.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/koppi-joss.jpg" alt="Kopi joss panas khas angkringan Yogyakarta">
+              <figcaption><strong>Kopi Joss</strong><span>Kopi panas dengan arang membara.</span></figcaption>
+            </figure>
+            <figure class="hero-slide" aria-hidden="true">
+              <img class="hero-photo" src="assets/images/yangko.jpg" alt="Yangko warna-warni khas Kotagede">
+              <figcaption><strong>Yangko Kotagede</strong><span>Kenyal manis, warna-warni.</span></figcaption>
+            </figure>
+          </div>
+          <span class="stamp">RASA<br><small>JOGJA</small></span>
+        </div>
+      </section>
+
+      <section class="content-section" id="explore">
+        <div class="section-heading">
+          <div><p class="eyebrow">Explore</p><h2>Cari berdasarkan kategori.</h2></div>
+          <p class="heading-note">Pilih jenis kuliner yang ingin<br>kamu temukan hari ini.</p>
+        </div>
+        <div class="choice-row" id="exploreChoices"></div>
+        <div class="toolbar">
+          <div class="result-label"><span id="exploreCount">0</span> kuliner ditemukan</div>
+          <label class="search"><span class="search-icon" aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Cari makanan atau daerah..." aria-label="Cari makanan atau daerah"><button class="clear-search" id="clearSearch" type="button" aria-label="Hapus pencarian" hidden>×</button></label>
+        </div>
+        <div class="results-heading" id="resultsHeading" hidden>
+          <div><p class="eyebrow">Daftar kuliner</p><h3 id="resultsTitle"></h3></div>
+          <button class="text-btn" id="resetResults" type="button">Tampilkan semua →</button>
+        </div>
+        <div class="food-grid row g-4" id="exploreGrid"></div>
+      </section>
+
+      <section class="content-section tinted" id="trending">
+        <div class="section-heading">
+          <div><p class="eyebrow">Trending</p><h2>Yang sedang ramai.</h2></div>
+          <button class="text-btn" data-view="trending" type="button">View All →</button>
+        </div>
+        <div class="choice-row" id="trendingChoices"></div>
+        <div class="food-grid row g-4" id="trendingGrid"></div>
+      </section>
+
+      <section class="content-section" id="recommendations">
+        <div class="section-heading">
+          <div><p class="eyebrow">Recommendations</p><h2>Dipilih untukmu.</h2></div>
+          <button class="text-btn" data-view="recommendations" type="button">View All →</button>
+        </div>
+        <div class="choice-row" id="recommendationChoices"></div>
+        <div class="food-grid row g-4" id="recommendationGrid"></div>
+      </section>
+
+      <section class="content-section region-section" id="regions">
+        <div class="section-heading">
+          <div><p class="eyebrow">Regions · Yogyakarta</p><h2>Jelajahi 5 kabupaten/kota DIY.</h2></div>
+          <p class="heading-note">Pilih wilayah untuk melihat daftar kuliner yang tersedia, atau buka semua menu DIY.</p>
+        </div>
+        <div class="region-grid row row-cols-2 row-cols-md-3 row-cols-xl-3 g-3" id="regionChoices"></div>
+        <div class="food-grid row g-4" id="regionGrid"></div>
+      </section>
+
+      <section class="quote" aria-label="Cerita rasa">
+        <span class="quote-mark">“</span>
+        <div>
+          <p>Jogja itu bukan hanya tempat untuk dikunjungi.<br><em>Ia adalah rasa yang selalu ingin kembali.</em></p>
+          <span class="quote-by">— Catatan kecil dari perjalanan rasa</span>
+        </div>
+      </section>
+
+      <section class="stories-section" id="stories">
+        <div class="section-heading">
+          <div><p class="eyebrow">Stories</p><h2>Cerita di balik rasa.</h2></div>
+          <button class="text-btn" data-view="stories" type="button">View All →</button>
+        </div>
+        <div class="story-grid row row-cols-1 row-cols-md-3 g-4" id="storyGrid"></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <a class="brand" href="#home"><span class="brand-mark">RJ</span><span>rasa<span class="brand-dot">.</span>jogja</span></a>
+      <span>Diracik dengan rasa dan cerita.</span>
+      <span>© 2024 Rasa Jogja</span>
+    </footer>
+
+    <div class="detail-overlay" id="detailOverlay" aria-hidden="true">
+      <div class="detail-panel" role="dialog" aria-modal="true" aria-label="Detail kuliner">
+        <button class="close-detail" id="closeDetail" type="button" aria-label="Tutup detail">×</button>
+        <div id="detailContent"></div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
