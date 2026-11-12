@@ -148,7 +148,7 @@ function foodCard(food) {
 
 function renderGrid(selector, list) {
   const grid = $(selector);
-  grid.innerHTML = list.map((food) => `<div class="food-col col-12 col-sm-6 col-lg-3">${foodCard(food)}</div>`).join('') || '<div class="col-12"><p class="empty">Belum ada kuliner yang cocok.</p></div>';
+  grid.innerHTML = list.map((food) => `<div class="food-col col-6 col-lg-3">${foodCard(food)}</div>`).join('') || '<div class="col-12"><p class="empty">Belum ada kuliner yang cocok.</p></div>';
   animateNewCards(grid);
 }
 
@@ -188,7 +188,7 @@ $('#regionChoices').innerHTML = regions.map(([key, label, description], index) =
   const count = key === 'all' ? foods.length : foods.filter((food) => food.area === key).length;
   return `<div class="region-col col"><button class="region-card" data-region="${key}"><span class="region-number">${String(index + 1).padStart(2, '0')} · ${count} menu</span><strong>${label}</strong><small>${description}</small><b>Lihat kuliner →</b></button></div>`;
 }).join('');
-$('#storyGrid').innerHTML = stories.map((story) => `<div class="story-col col"><article class="story-card card h-100"><img src="${story.image}" alt="${story.title}" loading="lazy"><div class="card-body"><p class="eyebrow">Cerita pasar · ${story.place}</p><h3>${story.title}</h3><p>${story.excerpt}</p><button class="detail-link" data-story="${story.id}">Read More →</button></div></article></div>`).join('');
+$('#storyGrid').innerHTML = stories.map((story) => `<div class="story-col col-6 col-md-4"><article class="story-card card h-100"><img src="${story.image}" alt="${story.title}" loading="lazy"><div class="card-body"><p class="eyebrow">Cerita pasar · ${story.place}</p><h3>${story.title}</h3><p>${story.excerpt}</p><button class="detail-link" data-story="${story.id}">Read More →</button></div></article></div>`).join('');
 
 function showStoryDetail(id) {
   const story = stories.find((item) => item.id === id);
